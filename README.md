@@ -1,0 +1,1 @@
+# Container image with kubectl
