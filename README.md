@@ -6,7 +6,7 @@ This image is a slim debian base with `curl` and `kubectl`.
 
 ### Pull from docker hub
 
-I pushed this to [dockerhub](https://hub.docker.com/repository/docker/josefuentes/kubectl/general).
+I pushed this to [dockerhub](https://hub.docker.com/r/josefuentes/kubectl):
 
 ```
 docker run -ti josefuentes/kubectl
