@@ -1,4 +1,4 @@
-VERSION?=v1.20.0
+VERSION?=v1.26.0
 IMAGE_NAME?=josefuentes/kubectl
 IMAGE_VERSION?=$(VERSION)
 IMAGE_TAG?=$(IMAGE_NAME):$(IMAGE_VERSION)
@@ -21,3 +21,8 @@ docker-build: _docker-build
 
 .PHONY: docker-push
 docker-push: _docker-push
+
+.PHONY: configure-buildx-builder
+	docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+	docker buildx create --name multiarch --driver docker-container --use
+	docker buildx inspect --bootstrap
